@@ -27,12 +27,14 @@ class _AugmentedFaceScreenState extends State<AugmentedFaceScreen> {
     );
   }
 
+  // Metodo invocato dopo che la view nativa è stata creata
   void _onArCoreViewCreated(ArCoreFaceController controller) {
     _arCoreFaceController = controller;
     loadMesh();
   }
 
-  loadMesh() async {
+  // Carico la texture e indico il nome del file 3D da abbinare al viso
+  void loadMesh() async {
     final ByteData textureBytes =
         await rootBundle.load('assets/fox_face_mesh_texture.png');
 
